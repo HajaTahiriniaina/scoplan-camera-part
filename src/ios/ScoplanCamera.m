@@ -58,7 +58,7 @@
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         dispatch_async( dispatch_get_main_queue(), ^{
             [self.webView addSubview:self.overLayView];
-            self.overLayView = [[[NSBundle mainBundle] loadNibNamed:@"multiCam" owner:self.viewController options:nil] objectAtIndex:0];
+            self.overLayView = [[[NSBundle mainBundle] loadNibNamed:@"multicam" owner:self.viewController options:nil] objectAtIndex:0];
             UIButton *takeBtn = (UIButton *)[self.overLayView viewWithTag:1];
             [takeBtn addTarget: self action: @selector(takenClicked:) forControlEvents: UIControlEventTouchUpInside];
             UIButton *cancelBtn = (UIButton *)[self.overLayView viewWithTag:2];

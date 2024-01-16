@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "UIImagePickerDelegate.h"
 #import "ScoplanCamera.h"
-#import <DSPhotoEditorSDK/DSPhotoEditorSDK.h>
 
 @interface UIImagePickerDelegate()
 @property (nonatomic) ScoplanCamera *mCamera;
@@ -29,11 +28,9 @@
                                      UIImagePickerControllerOriginalImage];
     NSDate *currentDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd_MM_YY_HH_mm_ss_SSS"];
+    [dateFormatter setDateFormat:@"dd_MM_YY_HH_mm_ss"];
     NSString *filename = [dateFormatter stringFromDate:currentDate];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docsPath = [paths objectAtIndex:0];
-    //NSString* docsPath = [NSTemporaryDirectory() stringByStandardizingPath];
+    NSString* docsPath = [NSTemporaryDirectory() stringByStandardizingPath];
     NSString* thumbnailPath = [NSString stringWithFormat:@"%@/%@_mthumb.jpg", docsPath, filename];
     NSError* err = nil;
     originalImage = [self scaleAndRotateImage:originalImage];

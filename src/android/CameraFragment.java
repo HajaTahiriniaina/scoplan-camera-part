@@ -409,6 +409,7 @@ public class CameraFragment extends Fragment implements scoplan.camera.OnImageCa
     }
 
     public void defineViewVisibility() {
+        cameraTopBar.setVisibility(View.GONE);
         if(pictures.size() > 0) {
             souche.setVisibility(View.VISIBLE);
             validationButton.setVisibility(View.VISIBLE);
@@ -453,7 +454,7 @@ public class CameraFragment extends Fragment implements scoplan.camera.OnImageCa
                 view.getId() == this.fakeR.getId("image_souche") ||
                 view.getId() == this.fakeR.getId("draw_on")
         ) {
-            this.startDrawing();
+            // this.startDrawing();
         } else if(
             view.getId() == this.fakeR.getId("cancel") ||
                 view.getId() == this.fakeR.getId("cancel_btn")

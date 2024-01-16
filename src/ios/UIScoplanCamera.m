@@ -668,7 +668,7 @@ typedef NS_ENUM( NSInteger, AVCamDepthDataDeliveryMode ) {
 #pragma mark Capturing Photos
 
 - (IBAction)backtowebview:(id)sender {
-    [mCamera dismisCam];
+    [mCamera dismissCam];
 }
 - (IBAction)capturePhoto:(id)sender
 {
